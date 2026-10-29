@@ -27,6 +27,8 @@ import { Route as CSlugRouteImport } from './routes/c.$slug'
 import { Route as EmbedSlugRouteImport } from './routes/embed.$slug'
 import { Route as PSlugRouteImport } from './routes/p.$slug'
 import { Route as AuthenticatedDashboardIndexRouteImport } from './routes/_authenticated/dashboard.index'
+import { Route as AuthenticatedDashboardProjectsRouteImport } from './routes/_authenticated/dashboard.projects'
+import { Route as AuthenticatedDashboardTestimonialsRouteImport } from './routes/_authenticated/dashboard.testimonials'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -118,6 +120,18 @@ const AuthenticatedDashboardIndexRoute =
     path: '/',
     getParentRoute: () => AuthenticatedDashboardRoute,
   } as any)
+const AuthenticatedDashboardProjectsRoute =
+  AuthenticatedDashboardProjectsRouteImport.update({
+    id: '/projects',
+    path: '/projects',
+    getParentRoute: () => AuthenticatedDashboardRoute,
+  } as any)
+const AuthenticatedDashboardTestimonialsRoute =
+  AuthenticatedDashboardTestimonialsRouteImport.update({
+    id: '/testimonials',
+    path: '/testimonials',
+    getParentRoute: () => AuthenticatedDashboardRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -136,6 +150,8 @@ export interface FileRoutesByFullPath {
   '/c/$slug': typeof CSlugRoute
   '/embed/$slug': typeof EmbedSlugRoute
   '/p/$slug': typeof PSlugRoute
+  '/dashboard/projects': typeof AuthenticatedDashboardProjectsRoute
+  '/dashboard/testimonials': typeof AuthenticatedDashboardTestimonialsRoute
   '/dashboard/': typeof AuthenticatedDashboardIndexRoute
 }
 export interface FileRoutesByTo {
@@ -154,6 +170,8 @@ export interface FileRoutesByTo {
   '/c/$slug': typeof CSlugRoute
   '/embed/$slug': typeof EmbedSlugRoute
   '/p/$slug': typeof PSlugRoute
+  '/dashboard/projects': typeof AuthenticatedDashboardProjectsRoute
+  '/dashboard/testimonials': typeof AuthenticatedDashboardTestimonialsRoute
   '/dashboard': typeof AuthenticatedDashboardIndexRoute
 }
 export interface FileRoutesById {
@@ -175,6 +193,8 @@ export interface FileRoutesById {
   '/c/$slug': typeof CSlugRoute
   '/embed/$slug': typeof EmbedSlugRoute
   '/p/$slug': typeof PSlugRoute
+  '/_authenticated/dashboard/projects': typeof AuthenticatedDashboardProjectsRoute
+  '/_authenticated/dashboard/testimonials': typeof AuthenticatedDashboardTestimonialsRoute
   '/_authenticated/dashboard/': typeof AuthenticatedDashboardIndexRoute
 }
 export interface FileRouteTypes {
@@ -196,6 +216,8 @@ export interface FileRouteTypes {
     | '/c/$slug'
     | '/embed/$slug'
     | '/p/$slug'
+    | '/dashboard/projects'
+    | '/dashboard/testimonials'
     | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -214,6 +236,8 @@ export interface FileRouteTypes {
     | '/c/$slug'
     | '/embed/$slug'
     | '/p/$slug'
+    | '/dashboard/projects'
+    | '/dashboard/testimonials'
     | '/dashboard'
   id:
     | '__root__'
@@ -234,6 +258,8 @@ export interface FileRouteTypes {
     | '/c/$slug'
     | '/embed/$slug'
     | '/p/$slug'
+    | '/_authenticated/dashboard/projects'
+    | '/_authenticated/dashboard/testimonials'
     | '/_authenticated/dashboard/'
   fileRoutesById: FileRoutesById
 }
@@ -384,15 +410,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDashboardIndexRouteImport
       parentRoute: typeof AuthenticatedDashboardRoute
     }
+    '/_authenticated/dashboard/projects': {
+      id: '/_authenticated/dashboard/projects'
+      path: '/projects'
+      fullPath: '/dashboard/projects'
+      preLoaderRoute: typeof AuthenticatedDashboardProjectsRouteImport
+      parentRoute: typeof AuthenticatedDashboardRoute
+    }
+    '/_authenticated/dashboard/testimonials': {
+      id: '/_authenticated/dashboard/testimonials'
+      path: '/testimonials'
+      fullPath: '/dashboard/testimonials'
+      preLoaderRoute: typeof AuthenticatedDashboardTestimonialsRouteImport
+      parentRoute: typeof AuthenticatedDashboardRoute
+    }
   }
 }
 
 interface AuthenticatedDashboardRouteChildren {
+  AuthenticatedDashboardProjectsRoute: typeof AuthenticatedDashboardProjectsRoute
+  AuthenticatedDashboardTestimonialsRoute: typeof AuthenticatedDashboardTestimonialsRoute
   AuthenticatedDashboardIndexRoute: typeof AuthenticatedDashboardIndexRoute
 }
 
 const AuthenticatedDashboardRouteChildren: AuthenticatedDashboardRouteChildren =
   {
+    AuthenticatedDashboardProjectsRoute: AuthenticatedDashboardProjectsRoute,
+    AuthenticatedDashboardTestimonialsRoute:
+      AuthenticatedDashboardTestimonialsRoute,
     AuthenticatedDashboardIndexRoute: AuthenticatedDashboardIndexRoute,
   }
 
