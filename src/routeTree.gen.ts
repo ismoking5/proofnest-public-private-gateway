@@ -27,8 +27,15 @@ import { Route as CSlugRouteImport } from './routes/c.$slug'
 import { Route as EmbedSlugRouteImport } from './routes/embed.$slug'
 import { Route as PSlugRouteImport } from './routes/p.$slug'
 import { Route as AuthenticatedDashboardIndexRouteImport } from './routes/_authenticated/dashboard.index'
+import { Route as AuthenticatedDashboardAnalyticsRouteImport } from './routes/_authenticated/dashboard.analytics'
+import { Route as AuthenticatedDashboardBillingRouteImport } from './routes/_authenticated/dashboard.billing'
+import { Route as AuthenticatedDashboardFormsRouteImport } from './routes/_authenticated/dashboard.forms'
+import { Route as AuthenticatedDashboardHelpRouteImport } from './routes/_authenticated/dashboard.help'
+import { Route as AuthenticatedDashboardPagesRouteImport } from './routes/_authenticated/dashboard.pages'
 import { Route as AuthenticatedDashboardProjectsRouteImport } from './routes/_authenticated/dashboard.projects'
+import { Route as AuthenticatedDashboardSettingsRouteImport } from './routes/_authenticated/dashboard.settings'
 import { Route as AuthenticatedDashboardTestimonialsRouteImport } from './routes/_authenticated/dashboard.testimonials'
+import { Route as AuthenticatedDashboardWidgetsRouteImport } from './routes/_authenticated/dashboard.widgets'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -120,16 +127,58 @@ const AuthenticatedDashboardIndexRoute =
     path: '/',
     getParentRoute: () => AuthenticatedDashboardRoute,
   } as any)
+const AuthenticatedDashboardAnalyticsRoute =
+  AuthenticatedDashboardAnalyticsRouteImport.update({
+    id: '/analytics',
+    path: '/analytics',
+    getParentRoute: () => AuthenticatedDashboardRoute,
+  } as any)
+const AuthenticatedDashboardBillingRoute =
+  AuthenticatedDashboardBillingRouteImport.update({
+    id: '/billing',
+    path: '/billing',
+    getParentRoute: () => AuthenticatedDashboardRoute,
+  } as any)
+const AuthenticatedDashboardFormsRoute =
+  AuthenticatedDashboardFormsRouteImport.update({
+    id: '/forms',
+    path: '/forms',
+    getParentRoute: () => AuthenticatedDashboardRoute,
+  } as any)
+const AuthenticatedDashboardHelpRoute =
+  AuthenticatedDashboardHelpRouteImport.update({
+    id: '/help',
+    path: '/help',
+    getParentRoute: () => AuthenticatedDashboardRoute,
+  } as any)
+const AuthenticatedDashboardPagesRoute =
+  AuthenticatedDashboardPagesRouteImport.update({
+    id: '/pages',
+    path: '/pages',
+    getParentRoute: () => AuthenticatedDashboardRoute,
+  } as any)
 const AuthenticatedDashboardProjectsRoute =
   AuthenticatedDashboardProjectsRouteImport.update({
     id: '/projects',
     path: '/projects',
     getParentRoute: () => AuthenticatedDashboardRoute,
   } as any)
+const AuthenticatedDashboardSettingsRoute =
+  AuthenticatedDashboardSettingsRouteImport.update({
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AuthenticatedDashboardRoute,
+  } as any)
 const AuthenticatedDashboardTestimonialsRoute =
   AuthenticatedDashboardTestimonialsRouteImport.update({
     id: '/testimonials',
     path: '/testimonials',
+    getParentRoute: () => AuthenticatedDashboardRoute,
+  } as any)
+const AuthenticatedDashboardWidgetsRoute =
+  AuthenticatedDashboardWidgetsRouteImport.update({
+    id: '/widgets',
+    path: '/widgets',
     getParentRoute: () => AuthenticatedDashboardRoute,
   } as any)
 
@@ -150,8 +199,15 @@ export interface FileRoutesByFullPath {
   '/c/$slug': typeof CSlugRoute
   '/embed/$slug': typeof EmbedSlugRoute
   '/p/$slug': typeof PSlugRoute
+  '/dashboard/analytics': typeof AuthenticatedDashboardAnalyticsRoute
+  '/dashboard/billing': typeof AuthenticatedDashboardBillingRoute
+  '/dashboard/forms': typeof AuthenticatedDashboardFormsRoute
+  '/dashboard/help': typeof AuthenticatedDashboardHelpRoute
+  '/dashboard/pages': typeof AuthenticatedDashboardPagesRoute
   '/dashboard/projects': typeof AuthenticatedDashboardProjectsRoute
+  '/dashboard/settings': typeof AuthenticatedDashboardSettingsRoute
   '/dashboard/testimonials': typeof AuthenticatedDashboardTestimonialsRoute
+  '/dashboard/widgets': typeof AuthenticatedDashboardWidgetsRoute
   '/dashboard/': typeof AuthenticatedDashboardIndexRoute
 }
 export interface FileRoutesByTo {
@@ -170,8 +226,15 @@ export interface FileRoutesByTo {
   '/c/$slug': typeof CSlugRoute
   '/embed/$slug': typeof EmbedSlugRoute
   '/p/$slug': typeof PSlugRoute
+  '/dashboard/analytics': typeof AuthenticatedDashboardAnalyticsRoute
+  '/dashboard/billing': typeof AuthenticatedDashboardBillingRoute
+  '/dashboard/forms': typeof AuthenticatedDashboardFormsRoute
+  '/dashboard/help': typeof AuthenticatedDashboardHelpRoute
+  '/dashboard/pages': typeof AuthenticatedDashboardPagesRoute
   '/dashboard/projects': typeof AuthenticatedDashboardProjectsRoute
+  '/dashboard/settings': typeof AuthenticatedDashboardSettingsRoute
   '/dashboard/testimonials': typeof AuthenticatedDashboardTestimonialsRoute
+  '/dashboard/widgets': typeof AuthenticatedDashboardWidgetsRoute
   '/dashboard': typeof AuthenticatedDashboardIndexRoute
 }
 export interface FileRoutesById {
@@ -193,8 +256,15 @@ export interface FileRoutesById {
   '/c/$slug': typeof CSlugRoute
   '/embed/$slug': typeof EmbedSlugRoute
   '/p/$slug': typeof PSlugRoute
+  '/_authenticated/dashboard/analytics': typeof AuthenticatedDashboardAnalyticsRoute
+  '/_authenticated/dashboard/billing': typeof AuthenticatedDashboardBillingRoute
+  '/_authenticated/dashboard/forms': typeof AuthenticatedDashboardFormsRoute
+  '/_authenticated/dashboard/help': typeof AuthenticatedDashboardHelpRoute
+  '/_authenticated/dashboard/pages': typeof AuthenticatedDashboardPagesRoute
   '/_authenticated/dashboard/projects': typeof AuthenticatedDashboardProjectsRoute
+  '/_authenticated/dashboard/settings': typeof AuthenticatedDashboardSettingsRoute
   '/_authenticated/dashboard/testimonials': typeof AuthenticatedDashboardTestimonialsRoute
+  '/_authenticated/dashboard/widgets': typeof AuthenticatedDashboardWidgetsRoute
   '/_authenticated/dashboard/': typeof AuthenticatedDashboardIndexRoute
 }
 export interface FileRouteTypes {
@@ -216,8 +286,15 @@ export interface FileRouteTypes {
     | '/c/$slug'
     | '/embed/$slug'
     | '/p/$slug'
+    | '/dashboard/analytics'
+    | '/dashboard/billing'
+    | '/dashboard/forms'
+    | '/dashboard/help'
+    | '/dashboard/pages'
     | '/dashboard/projects'
+    | '/dashboard/settings'
     | '/dashboard/testimonials'
+    | '/dashboard/widgets'
     | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -236,8 +313,15 @@ export interface FileRouteTypes {
     | '/c/$slug'
     | '/embed/$slug'
     | '/p/$slug'
+    | '/dashboard/analytics'
+    | '/dashboard/billing'
+    | '/dashboard/forms'
+    | '/dashboard/help'
+    | '/dashboard/pages'
     | '/dashboard/projects'
+    | '/dashboard/settings'
     | '/dashboard/testimonials'
+    | '/dashboard/widgets'
     | '/dashboard'
   id:
     | '__root__'
@@ -258,8 +342,15 @@ export interface FileRouteTypes {
     | '/c/$slug'
     | '/embed/$slug'
     | '/p/$slug'
+    | '/_authenticated/dashboard/analytics'
+    | '/_authenticated/dashboard/billing'
+    | '/_authenticated/dashboard/forms'
+    | '/_authenticated/dashboard/help'
+    | '/_authenticated/dashboard/pages'
     | '/_authenticated/dashboard/projects'
+    | '/_authenticated/dashboard/settings'
     | '/_authenticated/dashboard/testimonials'
+    | '/_authenticated/dashboard/widgets'
     | '/_authenticated/dashboard/'
   fileRoutesById: FileRoutesById
 }
@@ -410,11 +501,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDashboardIndexRouteImport
       parentRoute: typeof AuthenticatedDashboardRoute
     }
+    '/_authenticated/dashboard/analytics': {
+      id: '/_authenticated/dashboard/analytics'
+      path: '/analytics'
+      fullPath: '/dashboard/analytics'
+      preLoaderRoute: typeof AuthenticatedDashboardAnalyticsRouteImport
+      parentRoute: typeof AuthenticatedDashboardRoute
+    }
+    '/_authenticated/dashboard/billing': {
+      id: '/_authenticated/dashboard/billing'
+      path: '/billing'
+      fullPath: '/dashboard/billing'
+      preLoaderRoute: typeof AuthenticatedDashboardBillingRouteImport
+      parentRoute: typeof AuthenticatedDashboardRoute
+    }
+    '/_authenticated/dashboard/forms': {
+      id: '/_authenticated/dashboard/forms'
+      path: '/forms'
+      fullPath: '/dashboard/forms'
+      preLoaderRoute: typeof AuthenticatedDashboardFormsRouteImport
+      parentRoute: typeof AuthenticatedDashboardRoute
+    }
+    '/_authenticated/dashboard/help': {
+      id: '/_authenticated/dashboard/help'
+      path: '/help'
+      fullPath: '/dashboard/help'
+      preLoaderRoute: typeof AuthenticatedDashboardHelpRouteImport
+      parentRoute: typeof AuthenticatedDashboardRoute
+    }
+    '/_authenticated/dashboard/pages': {
+      id: '/_authenticated/dashboard/pages'
+      path: '/pages'
+      fullPath: '/dashboard/pages'
+      preLoaderRoute: typeof AuthenticatedDashboardPagesRouteImport
+      parentRoute: typeof AuthenticatedDashboardRoute
+    }
     '/_authenticated/dashboard/projects': {
       id: '/_authenticated/dashboard/projects'
       path: '/projects'
       fullPath: '/dashboard/projects'
       preLoaderRoute: typeof AuthenticatedDashboardProjectsRouteImport
+      parentRoute: typeof AuthenticatedDashboardRoute
+    }
+    '/_authenticated/dashboard/settings': {
+      id: '/_authenticated/dashboard/settings'
+      path: '/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof AuthenticatedDashboardSettingsRouteImport
       parentRoute: typeof AuthenticatedDashboardRoute
     }
     '/_authenticated/dashboard/testimonials': {
@@ -424,20 +557,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDashboardTestimonialsRouteImport
       parentRoute: typeof AuthenticatedDashboardRoute
     }
+    '/_authenticated/dashboard/widgets': {
+      id: '/_authenticated/dashboard/widgets'
+      path: '/widgets'
+      fullPath: '/dashboard/widgets'
+      preLoaderRoute: typeof AuthenticatedDashboardWidgetsRouteImport
+      parentRoute: typeof AuthenticatedDashboardRoute
+    }
   }
 }
 
 interface AuthenticatedDashboardRouteChildren {
+  AuthenticatedDashboardAnalyticsRoute: typeof AuthenticatedDashboardAnalyticsRoute
+  AuthenticatedDashboardBillingRoute: typeof AuthenticatedDashboardBillingRoute
+  AuthenticatedDashboardFormsRoute: typeof AuthenticatedDashboardFormsRoute
+  AuthenticatedDashboardHelpRoute: typeof AuthenticatedDashboardHelpRoute
+  AuthenticatedDashboardPagesRoute: typeof AuthenticatedDashboardPagesRoute
   AuthenticatedDashboardProjectsRoute: typeof AuthenticatedDashboardProjectsRoute
+  AuthenticatedDashboardSettingsRoute: typeof AuthenticatedDashboardSettingsRoute
   AuthenticatedDashboardTestimonialsRoute: typeof AuthenticatedDashboardTestimonialsRoute
+  AuthenticatedDashboardWidgetsRoute: typeof AuthenticatedDashboardWidgetsRoute
   AuthenticatedDashboardIndexRoute: typeof AuthenticatedDashboardIndexRoute
 }
 
 const AuthenticatedDashboardRouteChildren: AuthenticatedDashboardRouteChildren =
   {
+    AuthenticatedDashboardAnalyticsRoute: AuthenticatedDashboardAnalyticsRoute,
+    AuthenticatedDashboardBillingRoute: AuthenticatedDashboardBillingRoute,
+    AuthenticatedDashboardFormsRoute: AuthenticatedDashboardFormsRoute,
+    AuthenticatedDashboardHelpRoute: AuthenticatedDashboardHelpRoute,
+    AuthenticatedDashboardPagesRoute: AuthenticatedDashboardPagesRoute,
     AuthenticatedDashboardProjectsRoute: AuthenticatedDashboardProjectsRoute,
+    AuthenticatedDashboardSettingsRoute: AuthenticatedDashboardSettingsRoute,
     AuthenticatedDashboardTestimonialsRoute:
       AuthenticatedDashboardTestimonialsRoute,
+    AuthenticatedDashboardWidgetsRoute: AuthenticatedDashboardWidgetsRoute,
     AuthenticatedDashboardIndexRoute: AuthenticatedDashboardIndexRoute,
   }
 
