@@ -44,7 +44,7 @@ function Widgets() {
       <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
         <div className="space-y-5 rounded-xl border border-border bg-card p-5 shadow-card">
           <div className="space-y-1.5"><Label>{t("test.project")}</Label>
-            <Select value={pid} onValueChange={setPid}><SelectTrigger><SelectValue /></SelectTrigger>
+            <Select value={pid ?? ""} onValueChange={setPid}><SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>{projects.map((p) => <SelectItem key={p.id} value={p.id}>{p.name}</SelectItem>)}</SelectContent></Select></div>
           <div className="space-y-1.5"><Label>Format</Label>
             <div className="grid gap-2">{FORMATS.map((f) => (

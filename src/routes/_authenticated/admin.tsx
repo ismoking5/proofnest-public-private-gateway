@@ -31,7 +31,7 @@ function AdminPanel() {
   const qc = useQueryClient();
   const [q, setQ] = useState("");
   const [search, setSearch] = useState("");
-  const { data, isLoading, error } = useQuery({ queryKey: ["admin", search], queryFn: () => adminOverview({ data: { q: search || undefined } }) });
+  const { data, isLoading, error } = useQuery({ queryKey: ["admin", search], queryFn: () => adminOverview({ data: { ...(search ? { q: search } : {}) } }) });
 
   const toggle = async (userId: string, disabled: boolean) => {
     try { await adminSetDisabled({ data: { userId, disabled } }); toast.success("Updated"); qc.invalidateQueries({ queryKey: ["admin"] }); }

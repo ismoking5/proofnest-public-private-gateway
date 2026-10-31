@@ -109,7 +109,7 @@ function ProjectDialog({ project, customBranding, onClose }: { project: Project 
   const save = async (e: React.FormEvent) => {
     e.preventDefault();
     const slug = f.public_slug || slugify(f.name);
-    if (!/^[a-z0-9][a-z0-9-]{2,48}$/.test(slug)) return toast.error(t("proj.slugHelp"));
+    if (!/^[a-z0-9][a-z0-9-]{2,48}$/.test(slug)) { toast.error(t("proj.slugHelp")); return; }
     const norm = (u: string) => (u && !/^https?:\/\//.test(u) ? `https://${u}` : u) || null;
     const payload = { ...f, public_slug: slug, website_url: norm(f.website_url), logo_url: norm(f.logo_url), description: f.description || null };
     setBusy(true);
@@ -118,7 +118,7 @@ function ProjectDialog({ project, customBranding, onClose }: { project: Project 
       ? await supabase.from("projects").update(payload).eq("id", project.id)
       : await supabase.from("projects").insert({ ...payload, owner_id: u.user!.id });
     setBusy(false);
-    if (error) return toast.error(t(dbErrorKey(error.message)));
+    if (error) { toast.error(t(dbErrorKey(error.message))); return; }
     toast.success(project ? t("common.saved") : t("proj.created"));
     qc.invalidateQueries();
     onClose();

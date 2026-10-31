@@ -17,7 +17,7 @@ function Pages() {
   const { data: projects } = useQuery(projectsQuery);
   const toggle = async (id: string, v: boolean) => {
     const { error } = await supabase.from("projects").update({ is_public: v }).eq("id", id);
-    if (error) return toast.error(t("common.error"));
+    if (error) { toast.error(t("common.error")); return; }
     qc.invalidateQueries({ queryKey: ["projects"] });
   };
   return (
