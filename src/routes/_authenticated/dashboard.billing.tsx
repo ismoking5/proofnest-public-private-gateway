@@ -30,7 +30,7 @@ function Billing() {
       )}
       <h2 className="mb-2 font-semibold">{fr ? "Historique des paiements" : "Payment history"}</h2>
       <p className="mb-10 rounded-xl border border-dashed border-border bg-card p-6 text-center text-sm text-muted-foreground">{fr ? "Aucun paiement pour le moment." : "No payments yet."}</p>
-      <PricingCards currentPlan={account?.plan?.code} />
+      <PricingCards {...(account?.plan?.code ? { currentPlan: account.plan.code } : {})} />
     </div>
   );
 }

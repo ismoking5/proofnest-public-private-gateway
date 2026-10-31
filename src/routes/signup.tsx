@@ -35,14 +35,14 @@ function Signup() {
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password.length < 8) return toast.error(t("auth.passwordMin"));
+    if (password.length < 8) { toast.error(t("auth.passwordMin")); return; }
     setBusy(true);
     const { error } = await supabase.auth.signUp({
       email, password,
       options: { emailRedirectTo: window.location.origin + "/dashboard", data: { display_name: name.trim().slice(0, 100), preferred_language: locale } },
     });
     setBusy(false);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     setSent(true);
   };
 

@@ -21,11 +21,11 @@ export const Route = createFileRoute("/reset-password")({
     const [busy, setBusy] = useState(false);
     const submit = async (e: React.FormEvent) => {
       e.preventDefault();
-      if (pw.length < 8) return toast.error(t("auth.passwordMin"));
+      if (pw.length < 8) { toast.error(t("auth.passwordMin")); return; }
       setBusy(true);
       const { error } = await supabase.auth.updateUser({ password: pw });
       setBusy(false);
-      if (error) return toast.error(error.message);
+      if (error) { toast.error(error.message); return; }
       toast.success(t("auth.passwordUpdated"));
       navigate({ to: "/dashboard" });
     };

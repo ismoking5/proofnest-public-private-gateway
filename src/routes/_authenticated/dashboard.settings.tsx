@@ -24,7 +24,7 @@ function Settings() {
   const save = async (e: React.FormEvent) => {
     e.preventDefault();
     const { error } = await supabase.from("profiles").update({ display_name: name.slice(0, 100), preferred_language: lang }).eq("id", account!.user.id);
-    if (error) return toast.error(t("common.error"));
+    if (error) { toast.error(t("common.error")); return; }
     setLocale(lang);
     qc.invalidateQueries({ queryKey: ["account"] });
     toast.success(t("common.saved"));

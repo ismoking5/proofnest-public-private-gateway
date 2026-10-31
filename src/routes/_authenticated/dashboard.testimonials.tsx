@@ -39,19 +39,19 @@ function Testimonials() {
 
   const setStatus = async (id: string, s: "approved" | "rejected" | "pending") => {
     const { error } = await supabase.from("testimonials").update({ status: s }).eq("id", id);
-    if (error) return toast.error(t(dbErrorKey(error.message)));
+    if (error) { toast.error(t(dbErrorKey(error.message))); return; }
     toast.success(t("common.saved"));
     qc.invalidateQueries();
   };
   const remove = async (id: string) => {
     const { error } = await supabase.from("testimonials").delete().eq("id", id);
-    if (error) return toast.error(t("common.error"));
+    if (error) { toast.error(t("common.error")); return; }
     setDeleting(null);
     qc.invalidateQueries();
   };
   const exportCsv = async () => {
     const { data: rows, error } = await supabase.from("testimonials").select("display_name, company_name, rating, content, status, submitted_at, projects(name)").order("submitted_at", { ascending: false }).limit(5000);
-    if (error || !rows) return toast.error(t("common.error"));
+    if (error || !rows) { toast.error(t("common.error")); return; }
     const esc = (v: unknown) => `"${String(v ?? "").replaceAll('"', '""')}"`;
     const csv = ["project,name,company,rating,status,submitted_at,content", ...rows.map((r) => [r.projects?.name, r.display_name, r.company_name, r.rating, r.status, r.submitted_at, r.content].map(esc).join(","))].join("\n");
     const a = document.createElement("a");
@@ -138,7 +138,7 @@ function EditDialog({ item, onClose }: { item: Testimonial; onClose: () => void 
   const save = async (e: React.FormEvent) => {
     e.preventDefault();
     const { error } = await supabase.from("testimonials").update({ display_name: f.display_name, company_name: f.company_name || null, content: f.content }).eq("id", item.id);
-    if (error) return toast.error(t("common.error"));
+    if (error) { toast.error(t("common.error")); return; }
     qc.invalidateQueries();
     onClose();
   };
