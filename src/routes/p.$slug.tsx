@@ -6,7 +6,6 @@ import { getPublicPage, recordView } from "@/lib/public.functions";
 import { Stars } from "@/components/Stars";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { LogoMark } from "@/components/brand/Logo";
-import { LanguageSwitcher } from "@/components/site/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 
@@ -60,7 +59,6 @@ function PublicPage() {
     <div className="min-h-screen bg-background">
       <header className="border-b border-border" style={{ backgroundImage: `linear-gradient(180deg, ${project.primary_color}14, transparent)` }}>
         <div className="mx-auto max-w-5xl px-4 pb-10 pt-6">
-          <div className="flex justify-end"><LanguageSwitcher /></div>
           <div className="mt-4 flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between">
             <div className="flex items-center gap-4">
               {project.logo_url ? <img src={project.logo_url} alt={project.name} className="h-16 w-16 rounded-xl border border-border bg-card object-contain p-1" /> : <span className="flex h-16 w-16 items-center justify-center rounded-xl font-display text-2xl font-bold text-primary-foreground" style={{ background: project.primary_color }}>{project.name[0]}</span>}

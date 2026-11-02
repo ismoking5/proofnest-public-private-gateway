@@ -9,10 +9,10 @@ import { useI18n } from "@/lib/i18n";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ProofNest — Turn Happy Customers Into Your Best Marketing" },
-      { name: "description", content: "Collect authentic customer testimonials, moderate them and display them on your website in minutes." },
-      { property: "og:title", content: "ProofNest — Turn Happy Customers Into Your Best Marketing" },
-      { property: "og:description", content: "Collect, moderate and display authentic customer testimonials in minutes." },
+      { title: "ProofNest — Transformez vos clients satisfaits en votre meilleur marketing" },
+      { name: "description", content: "Collectez des témoignages clients authentiques, modérez-les et affichez-les sur votre site en quelques minutes." },
+      { property: "og:title", content: "ProofNest — Transformez vos clients satisfaits en votre meilleur marketing" },
+      { property: "og:description", content: "Collectez, modérez et affichez des témoignages clients authentiques en quelques minutes." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -30,7 +30,7 @@ function Home() {
             <Sparkles className="h-3.5 w-3.5" /> {t("home.eyebrow")}
           </span>
           <h1 className="animate-rise mx-auto mt-6 max-w-4xl text-4xl font-extrabold leading-[1.05] sm:text-5xl md:text-6xl">
-            Turn Happy Customers Into Your <span className="bg-gradient-primary bg-clip-text text-transparent">Best Marketing</span>.
+            Transformez vos clients satisfaits en votre <span className="bg-gradient-primary bg-clip-text text-transparent">meilleur marketing</span>.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">{t("home.subtitle")}</p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

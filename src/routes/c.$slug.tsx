@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { LogoMark } from "@/components/brand/Logo";
-import { LanguageSwitcher } from "@/components/site/LanguageSwitcher";
 import { getCollectProject, submitTestimonial } from "@/lib/public.functions";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -70,7 +69,6 @@ function Collect() {
   return (
     <div className="min-h-screen bg-hero px-4 py-8">
       <div className="mx-auto max-w-lg">
-        <div className="mb-4 flex justify-end"><LanguageSwitcher /></div>
         <div className="rounded-2xl border border-border bg-card p-6 shadow-card md:p-8" style={{ borderTop: `4px solid ${project.primary_color}` }}>
           {project.logo_url ? <img src={project.logo_url} alt={project.name} className="mb-4 h-12 w-auto object-contain" /> : null}
           {done ? (

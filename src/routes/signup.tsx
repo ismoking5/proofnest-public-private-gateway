@@ -12,15 +12,15 @@ import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/signup")({
   head: () => ({ meta: [
-    { title: "Create your free account — ProofNest" }, { name: "description", content: "Start collecting customer testimonials for free." },
-    { property: "og:title", content: "Start free — ProofNest" }, { property: "og:description", content: "Start collecting customer testimonials for free." },
+    { title: "Créez votre compte gratuit — ProofNest" }, { name: "description", content: "Commencez à collecter des témoignages clients gratuitement." },
+    { property: "og:title", content: "Commencez gratuitement — ProofNest" }, { property: "og:description", content: "Commencez à collecter des témoignages clients gratuitement." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
   ]}),
   component: Signup,
 });
 
 function Signup() {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const { user, loading } = useAuth();
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -39,7 +39,7 @@ function Signup() {
     setBusy(true);
     const { error } = await supabase.auth.signUp({
       email, password,
-      options: { emailRedirectTo: window.location.origin + "/dashboard", data: { display_name: name.trim().slice(0, 100), preferred_language: locale } },
+      options: { emailRedirectTo: window.location.origin + "/dashboard", data: { display_name: name.trim().slice(0, 100), preferred_language: "fr" } },
     });
     setBusy(false);
     if (error) { toast.error(error.message); return; }

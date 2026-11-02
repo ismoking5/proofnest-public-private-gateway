@@ -3,14 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 import { BarChart3, Code2, CreditCard, FolderKanban, Globe, HelpCircle, LayoutDashboard, LogOut, Menu, MessageSquareQuote, Settings, Shield, Link2, X } from "lucide-react";
 import { useState } from "react";
 import { Logo } from "@/components/brand/Logo";
-import { LanguageSwitcher } from "@/components/site/LanguageSwitcher";
 import { supabase } from "@/integrations/supabase/client";
 import { accountQuery } from "@/lib/data";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
-  head: () => ({ meta: [{ title: "Dashboard — ProofNest" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Tableau de bord — ProofNest" }, { name: "robots", content: "noindex" }] }),
   component: DashboardLayout,
 });
 
@@ -79,8 +78,7 @@ function DashboardLayout() {
           <button className="lg:hidden" onClick={() => setOpen(true)} aria-label="Menu"><Menu /></button>
           <span className="lg:hidden"><Logo to="/dashboard" /></span>
           <div className={cn("ml-auto flex items-center gap-3")}>
-            <span className="hidden rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground sm:inline">{account?.plan?.name ?? "Free"}</span>
-            <LanguageSwitcher />
+            <span className="hidden rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground sm:inline">{account?.plan?.name ?? "Gratuit"}</span>
           </div>
         </header>
         <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 md:px-8"><Outlet /></main>

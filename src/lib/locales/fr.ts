@@ -1,8 +1,7 @@
-import type { Dict } from "./en";
-
-export const fr: Dict = {
+// Français — seule langue de l'application. Ce fichier est la source de vérité des textes.
+export const fr = {
   brand: { slogan: "Transformez vos clients satisfaits en votre meilleur marketing." },
-  nav: { features: "Fonctionnalités", pricing: "Tarifs", how: "Comment ça marche", login: "Connexion", signup: "Commencer gratuitement", dashboard: "Tableau de bord", language: "Langue" },
+  nav: { features: "Fonctionnalités", pricing: "Tarifs", how: "Comment ça marche", login: "Connexion", signup: "Commencer gratuitement", dashboard: "Tableau de bord" },
   common: {
     save: "Enregistrer", cancel: "Annuler", delete: "Supprimer", edit: "Modifier", create: "Créer", copy: "Copier", copied: "Copié dans le presse-papiers",
     loading: "Chargement…", saved: "Enregistré", error: "Une erreur est survenue. Veuillez réessayer.", confirm: "Confirmer", back: "Retour",
@@ -34,25 +33,27 @@ export const fr: Dict = {
   },
   how: { title: "Comment ça marche", subtitle: "De la première demande à la preuve publiée en quelques minutes." },
   faq: {
-    q1: "Y a-t-il vraiment une offre gratuite ?", a1: "Oui. L'offre Free inclut 1 projet, une page publique, un formulaire de collecte et jusqu'à 10 témoignages publiés.",
+    q1: "Y a-t-il vraiment une offre gratuite ?", a1: "Oui. L'offre Gratuit inclut 1 projet, une page publique, un formulaire de collecte et jusqu'à 10 témoignages publiés.",
     q2: "Mes clients doivent-ils créer un compte ?", a2: "Non. Ils ouvrent votre lien, remplissent un court formulaire et donnent leur consentement.",
     q3: "Un témoignage peut-il être publié sans mon accord ?", a3: "Jamais. Chaque soumission arrive en attente jusqu'à votre approbation.",
     q4: "Comment ajouter les témoignages à mon site ?", a4: "Choisissez un widget, copiez le code d'intégration et collez-le sur votre site. Compatible avec tous les créateurs de sites.",
-    q5: "Les offres payantes sont-elles disponibles ?", a5: "Les offres payantes ouvriront dès que les paiements sécurisés seront configurés. En attendant, ProofNest fonctionne entièrement en mode gratuit.",
+    q5: "Les offres payantes sont-elles disponibles ?", a5: "Pas encore. Pour l'instant, seule l'offre gratuite est disponible. Les formules Starter (3 000 FCFA/mois) et Pro (8 000 FCFA/mois) arrivent bientôt.",
+    q6: "Qui peut voir l'e-mail de mes clients ?", a6: "Personne, il reste privé.",
   },
   pricing: {
     title: "Tarifs", subtitle: "Commencez gratuitement. Évoluez quand vous grandissez.", popular: "Le plus populaire", choose: "Choisir", current: "Offre actuelle",
     projects: "{n} projet(s)", testimonials: "Jusqu'à {n} témoignages", published: "Jusqu'à {n} témoignages publiés",
-    publicPage: "Page publique de témoignages", form: "Formulaire de collecte", branding: "Mention ProofNest", customBranding: "Branding personnalisé",
+    publicPage: "Page publique de témoignages", form: "Formulaire de collecte", branding: "Mention ProofNest affichée", customBranding: "Branding personnalisé",
     basicWidgets: "Widgets de base", customWidgets: "Widgets personnalisables", allWidgets: "Tous les formats de widgets",
     simpleDash: "Tableau de bord simple", basicAnalytics: "Statistiques de base", advancedAnalytics: "Statistiques avancées", csv: "Export CSV",
     support: "Support standard", prioritySupport: "Support prioritaire", team: "Gestion d'équipe (bientôt)",
-    paymentsSoon: "Les offres payantes ne sont pas encore disponibles — les paiements sont en cours de configuration.",
+    paymentsSoon: "Les offres payantes ne sont pas encore disponibles.", soon: "Bientôt", soonAvailable: "Bientôt disponible",
+    freeForever: "Gratuit, pour toujours",
   },
   auth: {
     loginTitle: "Bon retour", loginSub: "Connectez-vous à votre compte ProofNest.", signupTitle: "Créez votre compte", signupSub: "Gratuit à vie. Sans carte bancaire.",
     email: "E-mail", password: "Mot de passe", name: "Votre nom", forgot: "Mot de passe oublié ?", noAccount: "Pas encore de compte ?", haveAccount: "Déjà un compte ?",
-    login: "Se connecter", signup: "Créer mon compte", or: "ou", google: "Continuer avec Google", lovable: "Continuer avec Lovable",
+    login: "Se connecter", signup: "Créer mon compte", or: "ou", google: "Continuer avec Google",
     checkEmail: "Consultez votre boîte de réception pour confirmer votre adresse, puis connectez-vous.",
     forgotTitle: "Réinitialiser le mot de passe", forgotSub: "Nous vous enverrons un lien sécurisé.", sendLink: "Envoyer le lien", linkSent: "Si un compte existe, un lien de réinitialisation a été envoyé.",
     resetTitle: "Choisissez un nouveau mot de passe", newPassword: "Nouveau mot de passe", updatePassword: "Mettre à jour", passwordUpdated: "Mot de passe mis à jour.",
@@ -67,11 +68,20 @@ export const fr: Dict = {
     projectsUsed: "Projets", publishedUsed: "Témoignages publiés", totalUsed: "Total des témoignages",
   },
   proj: {
-    title: "Projets", name: "Nom", description: "Description", website: "Site internet", logo: "URL du logo", color: "Couleur principale", slug: "Identifiant public",
+    title: "Projets", name: "Nom", description: "Description", website: "Site internet", logo: "Logo", logoUrl: "URL du logo", color: "Couleur principale", slug: "Identifiant public",
     slugHelp: "Lettres minuscules, chiffres et tirets. Utilisé dans vos liens publics.", isPublic: "Page publique activée", branding: "Afficher la mention ProofNest",
-    brandingLocked: "Le branding personnalisé est disponible avec les offres payantes.", copyLink: "Copier le lien de collecte", viewPage: "Ouvrir la page publique", viewTestimonials: "Témoignages",
+    brandingLocked: "Le retrait de la mention ProofNest sera disponible avec les offres payantes (bientôt).", copyLink: "Copier le lien de collecte", viewPage: "Ouvrir la page publique", viewTestimonials: "Témoignages",
     deleteConfirm: "Supprimer ce projet et tous ses témoignages ? Action irréversible.", empty: "Aucun projet pour l'instant.", created: "Projet créé", limit: "Vous avez atteint la limite de projets de votre offre.",
-    slugTaken: "Cet identifiant public est déjà utilisé.", editTitle: "Modifier le projet", newTitle: "Nouveau projet",
+    slugTaken: "Cet identifiant public est déjà utilisé.", slugReserved: "Cet identifiant est réservé.", slugAvailable: "Identifiant disponible", slugChecking: "Vérification…",
+    editTitle: "Modifier le projet", newTitle: "Nouveau projet",
+    logoHelp: "PNG, JPG ou WebP, 2 Mo maximum. L'image est redimensionnée automatiquement.",
+    logoTooBig: "L'image dépasse 2 Mo. Choisissez un fichier plus léger.",
+    logoBadType: "Format non pris en charge. Utilisez un fichier PNG, JPG ou WebP.",
+    logoUploadError: "L'envoi du logo a échoué. Veuillez réessayer.",
+    logoRemove: "Supprimer le logo", logoChoose: "Choisir une image",
+    advanced: "Avancé",
+    readyTitle: "Votre projet est prêt", readySub: "Partagez ce lien avec vos clients pour collecter vos premiers témoignages.",
+    shareWhatsApp: "Partager sur WhatsApp", firstTestimonial: "Demander mon premier témoignage", goToForms: "Voir mes formulaires",
   },
   test: {
     title: "Témoignages", pending: "En attente", approved: "Approuvés", rejected: "Refusés", approve: "Approuver", reject: "Refuser",
@@ -82,10 +92,31 @@ export const fr: Dict = {
   collect: {
     title: "Partagez votre expérience avec {name}", sub: "Cela prend moins d'une minute. Merci !", name: "Votre nom (tel qu'affiché)", email: "E-mail",
     emailHelp: "Privé — jamais affiché publiquement.", company: "Entreprise", website: "Site ou profil professionnel", rating: "Votre note", content: "Votre témoignage",
-    contentPh: "Qu'avez-vous apprécié ? Qu'est-ce qui a changé pour vous ?", consent: "J'accepte que ce témoignage, mon nom et mon entreprise soient publiés par {name}.",
+    contentPh: "Qu'avez-vous apprécié ? Qu'est-ce qui a changé pour vous ?", consent: "J'accepte que mon témoignage, mon nom, mon entreprise et le lien de mon site ou profil (si je l'indique) soient publiés par {name} sur sa page et son site. Mon e-mail reste privé.",
+    ratingRequired: "Choisissez une note en étoiles avant d'envoyer.",
     submit: "Envoyer le témoignage", thanks: "Merci !", thanksSub: "Votre témoignage a bien été reçu et sera relu avant publication.",
     notFound: "Ce lien de collecte n'est pas valide.", rateLimited: "Trop de soumissions en ce moment. Réessayez dans quelques minutes.", limit: "Cette page ne peut pas accepter de nouveaux témoignages pour le moment.",
   },
-  public: { reviews: "{n} témoignages publiés", average: "Note moyenne", empty: "Aucun témoignage publié pour l'instant.", notFound: "Cette page n'existe pas ou n'est pas publique.", poweredBy: "Propulsé par ProofNest", leave: "Laisser un témoignage" },
+  public: { reviews: "{n} témoignages publiés", average: "Note moyenne", empty: "Pas encore d'avis publiés", notFound: "Cette page n'existe pas ou n'est pas publique.", poweredBy: "Propulsé par ProofNest", leave: "Laisser un témoignage" },
+  widget: { embedCode: "Code d'intégration", copyCode: "Copier le code", copiedShort: "Copié !", format: "Format", empty: "Aucun témoignage pour l'instant.", reviews: "{n} avis" },
+  billing: {
+    currentPlan: "Offre actuelle", usage: "Utilisation", testimonialsUsed: "Témoignages utilisés", publishedUsed: "Témoignages publiés",
+    comingSoon: "Les formules Starter et Pro arrivent bientôt", comingSoonSub: "Pour l'instant, votre compte fonctionne entièrement avec l'offre Gratuit. Aucun paiement n'est demandé.",
+  },
+  admin: {
+    siteSettings: "Paramètres du site", siteSettingsSub: "Ces informations s'affichent sur les pages légales et la page de contact.",
+    legalName: "Nom légal ou commercial", address: "Adresse", contactEmail: "E-mail de contact", contactWhatsapp: "Numéro WhatsApp", country: "Pays",
+    settingsSaved: "Paramètres enregistrés", invalidEmail: "Adresse e-mail invalide.", invalidWhatsapp: "Numéro WhatsApp invalide : 8 à 15 chiffres, format international (ex. 22670123456).",
+    whatsappHelp: "Format international, chiffres uniquement (ex. 22670123456).",
+  },
+  legal: { updating: "Information en cours de mise à jour" },
+  contact: {
+    subtitle: "Une question, un problème, une suggestion ? Écrivez-nous.",
+    message: "Votre message", messagePh: "Décrivez votre demande…", send: "Envoyer", whatsapp: "Nous écrire sur WhatsApp",
+    sentInfo: "Votre logiciel de messagerie va s'ouvrir avec votre message prérempli.",
+  },
   footer: { terms: "Conditions d'utilisation", privacy: "Politique de confidentialité", refund: "Politique de remboursement", contact: "Contact", rights: "Tous droits réservés." },
 };
+
+type Widen<T> = { [K in keyof T]: T[K] extends string ? string : Widen<T[K]> };
+export type Dict = Widen<typeof fr>;
