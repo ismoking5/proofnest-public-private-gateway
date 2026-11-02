@@ -3,7 +3,6 @@ import { Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/brand/Logo";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useI18n } from "@/lib/i18n";
 import { useAuth } from "@/lib/auth";
 
@@ -28,7 +27,6 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <LanguageSwitcher />
           {user ? (
             <Button asChild><Link to="/dashboard">{t("nav.dashboard")}</Link></Button>
           ) : (
@@ -48,7 +46,6 @@ export function SiteHeader() {
             {links.map((l) => (
               <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="py-1 font-medium">{l.label}</Link>
             ))}
-            <LanguageSwitcher />
             {user ? (
               <Button asChild><Link to="/dashboard">{t("nav.dashboard")}</Link></Button>
             ) : (
