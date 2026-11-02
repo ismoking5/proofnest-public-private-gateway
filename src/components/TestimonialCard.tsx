@@ -2,7 +2,7 @@ import { Stars } from "./Stars";
 
 export type PublicItem = { id: string; display_name: string; company_name: string | null; rating: number; content: string; photo_url: string | null; approved_at: string };
 
-export function TestimonialCard({ item, showDate = true, locale = "en" }: { item: PublicItem; showDate?: boolean; locale?: string }) {
+export function TestimonialCard({ item, showDate = true, locale = "fr" }: { item: PublicItem; showDate?: boolean; locale?: string }) {
   const initials = item.display_name.split(/\s+/).map((s) => s[0]).slice(0, 2).join("").toUpperCase();
   return (
     <figure className="break-inside-avoid rounded-xl border border-border bg-card p-5 shadow-card">
