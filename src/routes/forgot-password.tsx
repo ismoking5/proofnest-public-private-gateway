@@ -9,8 +9,8 @@ import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/forgot-password")({
   head: () => ({ meta: [
-    { title: "Reset password — ProofNest" }, { name: "description", content: "Reset your ProofNest password." },
-    { property: "og:title", content: "Reset password — ProofNest" }, { property: "og:description", content: "Reset your ProofNest password." },
+    { title: "Mot de passe oublié — ProofNest" }, { name: "description", content: "Réinitialisez votre mot de passe ProofNest." },
+    { property: "og:title", content: "Mot de passe oublié — ProofNest" }, { property: "og:description", content: "Réinitialisez votre mot de passe ProofNest." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
   ]}),
   component: () => {

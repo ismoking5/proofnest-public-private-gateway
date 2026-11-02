@@ -7,10 +7,10 @@ import { useI18n } from "@/lib/i18n";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — ProofNest" },
-      { name: "description", content: "Free, Starter and Pro plans for collecting and displaying customer testimonials." },
-      { property: "og:title", content: "ProofNest pricing" },
-      { property: "og:description", content: "Start free. Upgrade when you grow." },
+      { title: "Tarifs — ProofNest" },
+      { name: "description", content: "Les offres Gratuit, Starter et Pro pour collecter et afficher des témoignages clients." },
+      { property: "og:title", content: "Tarifs ProofNest" },
+      { property: "og:description", content: "Commencez gratuitement. Évoluez quand vous grandissez." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

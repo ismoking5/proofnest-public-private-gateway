@@ -11,8 +11,8 @@ import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/login")({
   head: () => ({ meta: [
-    { title: "Log in — ProofNest" }, { name: "description", content: "Log in to your ProofNest account." },
-    { property: "og:title", content: "Log in — ProofNest" }, { property: "og:description", content: "Log in to your ProofNest account." },
+    { title: "Connexion — ProofNest" }, { name: "description", content: "Connectez-vous à votre compte ProofNest." },
+    { property: "og:title", content: "Connexion — ProofNest" }, { property: "og:description", content: "Connectez-vous à votre compte ProofNest." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
   ]}),
   component: Login,

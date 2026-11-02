@@ -6,10 +6,10 @@ import { useI18n } from "@/lib/i18n";
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
-      { title: "Features — ProofNest" },
-      { name: "description", content: "Collection links, moderation, public pages, embeddable widgets and analytics for customer testimonials." },
-      { property: "og:title", content: "Features — ProofNest" },
-      { property: "og:description", content: "Everything you need to collect and display customer testimonials." },
+      { title: "Fonctionnalités — ProofNest" },
+      { name: "description", content: "Liens de collecte, modération, pages publiques, widgets intégrables et statistiques pour vos témoignages clients." },
+      { property: "og:title", content: "Fonctionnalités — ProofNest" },
+      { property: "og:description", content: "Tout ce qu'il faut pour collecter et afficher des témoignages clients." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

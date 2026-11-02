@@ -9,7 +9,7 @@ import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
-  head: () => ({ meta: [{ title: "Dashboard — ProofNest" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Tableau de bord — ProofNest" }, { name: "robots", content: "noindex" }] }),
   component: DashboardLayout,
 });
 
